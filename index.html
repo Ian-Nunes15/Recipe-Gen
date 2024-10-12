@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: red;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            padding: 10px 15px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: darkred;
+        }
+        pre {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            overflow: auto;
+            white-space: pre-wrap; /* Wrap long lines */
+        }
+    </style>
+</head>
+<body>
+    <h1>This is your epic RECIPE GENERATOR™</h1>
+    <h2>This will generate you multiple recipes at your fingertips</h2>
+    <h3>****NOTE****</h3>
+    <h4>RECIPE GENERATOR™ is still in its beta phase</h4>
+
+    <form method="POST">
+        <label for="recipe_type">What type of recipe do you want? (cupcake, cookie, cake, pastry):</label>
+        <input type="text" id="recipe_type" name="recipe_type" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if response %}
+        <div>
+            <h3>Recipe:</h3>
+            <pre>{{ response }}</pre>
+        </div>
+    {% endif %}
+</body>
+</html>
